@@ -522,60 +522,204 @@ body {
    MOBILE RESPONSIVENESS (Global)
    ========================================= */
 @media (max-width: 768px) {
-    /* Navbar Scaling */
-    .navbar .container {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    .nav-links {
-        gap: 0.75rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .nav-links button {
-        font-size: 0.9rem;
-    }
-    
-    /* Hero Scaling */
-    .hero {
-        padding: 2rem 1rem;
-        min-height: calc(100vh - 100px); /* Account for taller stacked navbar */
-    }
-    .hero h1 {
-        font-size: 2.5rem; /* Down from 3.5rem */
-    }
-    .hero p {
-        font-size: 1.1rem;
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
-    .hero-badges {
-        gap: 0.75rem;
-    }
-    .badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
+    body {
+        background:
+            radial-gradient(circle at 20% -10%, rgba(57, 255, 20, 0.2) 0%, rgba(5, 5, 5, 0) 45%),
+            radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.15) 0%, rgba(5, 5, 5, 0) 35%),
+            #050505;
     }
 
-    /* Calculator Forms */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Navbar: mobile tab-strip feel */
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+
+    .nav-brand {
+        font-size: 1.05rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links button {
+        font-size: 0.85rem;
+        padding: 0.45rem 0.8rem;
+        min-height: 40px;
+        border: 1px solid rgba(156, 163, 175, 0.25);
+        border-radius: 9999px;
+        white-space: nowrap;
+    }
+
+    /* Hero: phone-first composition */
+    .hero {
+        text-align: left;
+        align-items: stretch;
+        padding: 1.6rem 0.25rem 1.25rem;
+        min-height: auto;
+    }
+
+    .hero .container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        letter-spacing: -0.5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+        margin-bottom: 1.6rem;
+        margin-inline: 0;
+        max-width: none;
+    }
+
+    .btn-primary {
+        width: 100%;
+        max-width: 320px;
+        min-height: 48px;
+        font-size: 1rem;
+    }
+
+    .hero-badges {
+        justify-content: flex-start;
+        gap: 0.55rem;
+        margin-top: 1.5rem;
+    }
+
+    .badge {
+        font-size: 0.72rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .calculator-section {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .calculator-grid {
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+        border-radius: 0.85rem;
+    }
+
+    .form-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
     .form-row {
         flex-direction: column;
     }
 
+    .form-control {
+        min-height: 46px;
+        font-size: 0.97rem;
+    }
+
+    .btn-submit {
+        min-height: 50px;
+        margin-top: 0.5rem;
+        position: sticky;
+        bottom: 0.6rem;
+    }
+
     /* Results */
     .result-value {
-        font-size: 2.5rem; /* Down from 3.5rem */
+        font-size: clamp(2.1rem, 10vw, 2.8rem);
     }
+
     .empty-state {
-        min-height: 250px;
+        min-height: 210px;
+        padding: 1.5rem;
+    }
+
+    .tree-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.85rem;
+    }
+
+    .tree-number-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 0;
+    }
+
+    .tips-list li {
+        font-size: 0.82rem;
     }
 
     /* Contact Minimalism */
+    .contact-minimal {
+        padding: 2rem 1rem;
+    }
+
     .contact-minimal-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.2rem;
     }
+
     .contact-minimal-header h2 {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
+    }
+
+    .minimal-links a,
+    .contact-minimal-form input,
+    .contact-minimal-form textarea,
+    .contact-minimal-form button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero h1 {
+        font-size: clamp(1.65rem, 9.5vw, 2.1rem);
+    }
+
+    .hero p {
+        font-size: 0.94rem;
+    }
+
+    .badge {
+        font-size: 0.68rem;
+    }
+
+    .result-unit {
+        display: block;
+        font-size: 1rem;
+        margin-top: 0.2rem;
     }
 }
