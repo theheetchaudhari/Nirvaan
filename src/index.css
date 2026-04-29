@@ -573,8 +573,8 @@ body {
 
     /* Hero: phone-first composition */
     .hero {
-        text-align: left;
-        align-items: stretch;
+        text-align: center;
+        align-items: center;
         padding: 1.6rem 0.25rem 1.25rem;
         min-height: auto;
     }
@@ -582,7 +582,7 @@ body {
     .hero .container {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .hero h1 {
@@ -606,7 +606,7 @@ body {
     }
 
     .hero-badges {
-        justify-content: flex-start;
+        justify-content: center;
         gap: 0.55rem;
         margin-top: 1.5rem;
     }
