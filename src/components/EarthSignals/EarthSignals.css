@@ -1,0 +1,53 @@
+.earth-signals-section {
+  width: 100%;
+  padding: 4rem 1rem;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.earth-signals-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.earth-signals-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.earth-signals-image-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earth-signals-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.4s ease;
+  display: block; /* Removes any inline bottom spacing */
+}
+
+.earth-signals-image:hover {
+  filter: grayscale(0%);
+  transform: scale(1.08);
+}
+
+/* Mobile padding adjustments */
+@media (max-width: 768px) {
+  .earth-signals-section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Very small screens: Adjust height if needed */
+@media (max-width: 480px) {
+  /* Removed fixed heights to allow proportional scaling */
+}

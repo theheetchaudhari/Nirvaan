@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import EarthSignalsSection from './components/EarthSignals/EarthSignals';
 import InputForm from './components/InputForm';
 import ResultCard from './components/ResultCard';
 import TreeCard from './components/TreeCard';
@@ -27,6 +28,7 @@ function App() {
       <Navbar />
       <main className="main-content">
         <Hero />
+        <EarthSignalsSection />
         
         <div id="calculator" className="calculator-section container">
           <div className="calculator-grid">
