@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Zap, Globe, TrendingDown } from 'lucide-react';
 
 const Hero = () => {
   const scrollToCalculator = () => {
@@ -44,15 +45,15 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <motion.span className="badge" animate={floatAnimation}>
-            ⚡ Instant Results
+            <Zap size={16} /> Instant Results
           </motion.span>
           
           <motion.span className="badge" animate={floatAnimation} style={{ animationDelay: '0.2s' }}>
-            🌍 Beginner Friendly
+            <Globe size={16} /> Beginner Friendly
           </motion.span>
           
           <motion.span className="badge" animate={floatAnimation} style={{ animationDelay: '0.4s' }}>
-            📉 Reduce CO₂ Daily
+            <TrendingDown size={16} /> Reduce CO₂ Daily
           </motion.span>
         </motion.div>
 
