@@ -10,7 +10,7 @@ import TipsCard from './components/TipsCard';
 import Insights from './components/Insights';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Documentation from './pages/Documentation/documentation.jsx';
+import Documentation from './pages/documentation/Documentation.jsx';
 import { calculateFootprint } from './utils/carbonCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 
