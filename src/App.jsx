@@ -6,6 +6,7 @@ import InputForm from './components/InputForm';
 import ResultCard from './components/ResultCard';
 import TreeCard from './components/TreeCard';
 import TipsCard from './components/TipsCard';
+import Insights from './components/Insights';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { calculateFootprint } from './utils/carbonCalculator';
@@ -77,6 +78,7 @@ function App() {
             )}
           </AnimatePresence>
         </div>
+        <Insights />
         <Contact />
       </main>
       <Footer />

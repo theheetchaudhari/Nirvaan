@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="nav-links">
           <button onClick={() => scrollTo('home')}>HOME</button>
           <button onClick={() => scrollTo('calculator')}>CALCULATOR</button>
-          <button onClick={() => scrollTo('results-section')}>INSIGHTS</button>
+          <button onClick={() => scrollTo('insights')}>INSIGHTS</button>
           <button onClick={() => scrollTo('contact')}>CONTACT</button>
         </div>
       </div>
