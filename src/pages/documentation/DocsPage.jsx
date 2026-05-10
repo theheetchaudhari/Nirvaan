@@ -1,11 +1,11 @@
-    import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   FileText, Car, Zap, Droplets, Flame, Leaf,
   ShieldCheck, ExternalLink, Calculator, Info,
   ChevronDown, ArrowLeft
 } from 'lucide-react';
-import './documentation.css';
+import './DocsPage.css';
 
 /* ─────────────────────────────────────────
    REUSABLE HELPERS
