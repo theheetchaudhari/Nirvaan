@@ -1,0 +1,463 @@
+/* ================================================
+   NIRVAAN — DOCUMENTATION PAGE
+   Matches design system in src/index.css exactly
+   ================================================ */
+
+/* ─── LAYOUT ─── */
+.doc-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, rgba(57, 255, 20, 0.07) 0%, #050505 65%);
+  background-color: #050505;
+  color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+  padding-bottom: 5rem;
+}
+
+.doc-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ─── BACK BUTTON ─── */
+.doc-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1.75rem 0 0;
+}
+.doc-back:hover {
+  color: #39ff14;
+  border-color: rgba(57, 255, 20, 0.35);
+  background: rgba(57, 255, 20, 0.05);
+}
+
+/* ─── HERO ─── */
+.doc-hero {
+  text-align: center;
+  padding: 2.5rem 0 1.25rem;
+}
+
+.doc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.22);
+  color: #39ff14;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.doc-hero-title {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 800;
+  color: #f9fafb;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.doc-green {
+  color: #39ff14;
+  text-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+}
+
+.doc-hero-sub {
+  font-size: 0.97rem;
+  color: #9ca3af;
+  line-height: 1.65;
+  max-width: 500px;
+  margin: 0 auto 1.75rem;
+}
+
+.doc-sdg-badge {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: rgba(17, 24, 39, 0.75);
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  backdrop-filter: blur(8px);
+}
+.doc-sdg-badge strong { color: #39ff14; }
+
+/* ─── FORMULA CARD ─── */
+.doc-formula-card {
+  background: rgba(17, 24, 39, 0.65);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(57, 255, 20, 0.04);
+}
+
+.doc-formula-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.doc-formula-eq {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f9fafb;
+  font-family: 'Roboto Condensed', 'Inter', monospace;
+  letter-spacing: 0.02em;
+}
+
+.doc-formula-vars {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+.doc-formula-vars strong { color: #d1d5db; }
+
+/* ─── GROUP LABEL ─── */
+.doc-group-label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #4b5563;
+  margin: 2rem 0 0.85rem;
+}
+.doc-group-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #1f2937;
+}
+
+/* ─── GENERIC CARD ─── */
+.doc-card {
+  background: rgba(17, 24, 39, 0.55);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease;
+}
+.doc-card:hover { border-color: rgba(57, 255, 20, 0.15); }
+
+.doc-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── ACCORDION ─── */
+.doc-acc {
+  background: rgba(17, 24, 39, 0.55);
+  border: 1px solid #1f2937;
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease;
+}
+.doc-acc:hover,
+.doc-acc--open {
+  border-color: rgba(57, 255, 20, 0.2);
+}
+
+.doc-acc-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #f9fafb;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+.doc-acc-trigger:hover { background: rgba(57, 255, 20, 0.03); }
+
+.doc-acc-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.doc-acc-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  background: rgba(57, 255, 20, 0.07);
+  border: 1px solid rgba(57, 255, 20, 0.18);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #39ff14;
+}
+
+.doc-acc-chevron {
+  color: #6b7280;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
+}
+.doc-acc-chevron--open {
+  transform: rotate(180deg);
+  color: #39ff14;
+}
+
+.doc-acc-body {
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doc-acc-content {
+  padding: 0 1.4rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ─── TYPOGRAPHY ─── */
+.doc-p {
+  font-size: 0.93rem;
+  color: #9ca3af;
+  line-height: 1.7;
+  margin-bottom: 0.85rem;
+}
+.doc-p:last-child { margin-bottom: 0; }
+.doc-strong { color: #d1d5db !important; font-weight: 600; }
+
+.doc-subhead {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4b5563;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.doc-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+.doc-ul li {
+  font-size: 0.88rem;
+  color: #9ca3af;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.doc-ul li::before {
+  content: '›';
+  color: #39ff14;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── CODE ─── */
+.doc-code {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid #1f2937;
+  border-left: 3px solid #39ff14;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  font-family: 'Roboto Condensed', 'Courier New', monospace;
+  font-size: 0.88rem;
+  color: #39ff14;
+  margin: 0.65rem 0;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* ─── BLOCKQUOTE ─── */
+.doc-bq {
+  border-left: 3px solid rgba(57, 255, 20, 0.4);
+  background: rgba(57, 255, 20, 0.03);
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.7rem 1rem;
+  margin: 0.65rem 0;
+  color: #d1d5db;
+  font-size: 0.86rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+/* ─── SOURCE BLOCK ─── */
+.doc-source-block {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #1f2937;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.doc-source-label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4b5563;
+}
+.doc-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #39ff14;
+  font-size: 0.78rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(57, 255, 20, 0.25);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  word-break: break-all;
+}
+.doc-source-link:hover {
+  opacity: 0.75;
+  border-color: #39ff14;
+}
+
+/* ─── TABLE ─── */
+.doc-table-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2937;
+}
+.doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+.doc-table th {
+  background: rgba(57, 255, 20, 0.07);
+  color: #39ff14;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.6rem 1rem;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #1f2937;
+}
+.doc-table td {
+  padding: 0.55rem 1rem;
+  color: #9ca3af;
+  border-bottom: 1px solid rgba(31, 41, 55, 0.5);
+}
+.doc-table td:first-child { color: #d1d5db; font-weight: 500; }
+.doc-table tr:last-child td { border-bottom: none; }
+.doc-table tr:hover td { background: rgba(255, 255, 255, 0.015); }
+
+/* ─── DIVIDER ─── */
+.doc-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #1f2937, transparent);
+  margin: 2rem 0;
+}
+
+/* ─── DISCLAIMER ─── */
+.doc-disclaimer {
+  background: rgba(153, 27, 27, 0.05);
+  border: 1px solid rgba(153, 27, 27, 0.22);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+}
+.doc-disclaimer-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fca5a5;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.85rem;
+}
+
+/* ─── FOOTER ─── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 0 0;
+  font-size: 0.75rem;
+  color: #374151;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .doc-wrap { padding: 0 1rem; }
+
+  .doc-hero { padding: 1.75rem 0 1rem; }
+
+  .doc-formula-card { padding: 1.25rem 1.25rem; }
+  .doc-formula-eq { font-size: 1.05rem; }
+
+  .doc-card { padding: 1.25rem; }
+
+  .doc-acc-trigger {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.9rem;
+  }
+  .doc-acc-content { padding: 0 1.1rem 1.25rem; }
+
+  .doc-table th,
+  .doc-table td {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .doc-hero-title { font-size: 1.5rem; }
+  .doc-acc-icon { display: none; }
+  .doc-formula-vars { flex-direction: column; gap: 0.5rem; align-items: center; }
+}

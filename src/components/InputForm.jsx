@@ -110,16 +110,16 @@ const InputForm = ({ onCalculate }) => {
   };
 
   const transportOptions = [
-    { value: 'walk', label: 'Walk (0 kg/km)' },
-    { value: 'bike', label: 'Bike (0.05 kg/km)' },
-    { value: 'bus', label: 'Bus (0.08 kg/km)' },
-    { value: 'car', label: 'Car (0.2 kg/km)' }
+    { value: 'walk', label: 'Walk/Cycle (0 kg/km)' },
+    { value: 'bike', label: 'Bike/Scooter (0.11 kg/km)' },
+    { value: 'bus', label: 'Bus/Metro (0.06 kg/km)' },
+    { value: 'car', label: 'Car (0.15 kg/km)' }
   ];
 
   const dietOptions = [
-    { value: 'veg', label: 'Vegetarian (Low impact)' },
-    { value: 'mixed', label: 'Mixed Diet (Medium impact)' },
-    { value: 'non-veg', label: 'Heavy Meat (High impact)' }
+    { value: 'veg', label: 'Vegetarian (3.81 kg/day)' },
+    { value: 'mixed', label: 'Mixed Diet (5.63 kg/day)' },
+    { value: 'non-veg', label: 'Heavy Meat Diet (7.19 kg/day)' }
   ];
 
   const containerVariants = {
@@ -177,7 +177,7 @@ const InputForm = ({ onCalculate }) => {
 
         <motion.div variants={itemVariants} className="form-group">
           <label className="form-label"><Flame size={16} color="#f97316" /> Cooking Gas (LPG)</label>
-          <input type="number" name="lpg" placeholder="Usage (kg or units)" value={formData.lpg} onChange={handleChange} className="form-control" min="0" step="any" />
+          <input type="number" name="lpg" placeholder="Usage (kg)" value={formData.lpg} onChange={handleChange} className="form-control" min="0" step="any" />
         </motion.div>
 
         <motion.div variants={itemVariants} className="form-group">

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import EarthSignalsSection from './components/EarthSignals/EarthSignals';
@@ -9,11 +10,29 @@ import TipsCard from './components/TipsCard';
 import Insights from './components/Insights';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Documentation from './pages/Documentation/documentation.jsx';
 import { calculateFootprint } from './utils/carbonCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function App() {
+function HomePage() {
   const [results, setResults] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle scroll if redirected from documentation page
+    if (location.state?.scrollTo) {
+      const id = location.state.scrollTo;
+      setTimeout(() => {
+        if (id === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      // Clear state so it doesn't scroll again on refresh
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
 
   const handleCalculate = (formData) => {
     const calculatedData = calculateFootprint(formData);
@@ -25,62 +44,71 @@ function App() {
   };
 
   return (
+    <main className="main-content">
+      <Hero />
+      <EarthSignalsSection />
+      
+      <div id="calculator" className="calculator-section container">
+        <AnimatePresence mode="wait">
+          {!results ? (
+            <motion.div
+              key="form"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.9, filter: 'blur(5px)' }}
+              transition={{ duration: 0.4 }}
+              style={{ maxWidth: '600px', margin: '0 auto' }}
+            >
+              <InputForm onCalculate={handleCalculate} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="results"
+              id="results-section"
+              initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.5 }}
+              style={{ maxWidth: '600px', margin: '0 auto' }}
+            >
+              <div className="results-stack">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+                  <ResultCard total={results.total} rating={results.rating} />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+                  <TreeCard trees={results.trees} />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
+                  <TipsCard tips={results.tips} />
+                </motion.div>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} style={{ textAlign: 'center' }}>
+                  <button 
+                    onClick={() => setResults(null)} 
+                    className="btn-primary" 
+                    style={{ width: '100%', marginTop: '0.5rem' }}
+                  >
+                    Calculate Again
+                  </button>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      <Insights />
+      <Contact />
+    </main>
+  );
+}
+
+function App() {
+  return (
     <div className="app-container">
       <Navbar />
-      <main className="main-content">
-        <Hero />
-        <EarthSignalsSection />
-        
-        <div id="calculator" className="calculator-section container">
-          <AnimatePresence mode="wait">
-            {!results ? (
-              <motion.div
-                key="form"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, scale: 0.9, filter: 'blur(5px)' }}
-                transition={{ duration: 0.4 }}
-                style={{ maxWidth: '600px', margin: '0 auto' }}
-              >
-                <InputForm onCalculate={handleCalculate} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="results"
-                id="results-section"
-                initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5 }}
-                style={{ maxWidth: '600px', margin: '0 auto' }}
-              >
-                <div className="results-stack">
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                    <ResultCard total={results.total} rating={results.rating} />
-                  </motion.div>
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-                    <TreeCard trees={results.trees} />
-                  </motion.div>
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-                    <TipsCard tips={results.tips} />
-                  </motion.div>
-                  <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} style={{ textAlign: 'center' }}>
-                    <button 
-                      onClick={() => setResults(null)} 
-                      className="btn-primary" 
-                      style={{ width: '100%', marginTop: '0.5rem' }}
-                    >
-                      Calculate Again
-                    </button>
-                  </motion.div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-        <Insights />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/documentation" element={<Documentation />} />
+      </Routes>
       <Footer />
     </div>
   );
