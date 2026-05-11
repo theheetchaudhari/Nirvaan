@@ -11,6 +11,7 @@ import Insights from './components/Insights';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Documentation from './pages/documentation/DocsPage.jsx';
+import NeonLiquidBg from './components/NeonLiquidBg';
 import { calculateFootprint } from './utils/carbonCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -104,6 +105,7 @@ function HomePage() {
 function App() {
   return (
     <div className="app-container">
+      <NeonLiquidBg />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

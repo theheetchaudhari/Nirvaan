@@ -315,10 +315,6 @@ export default function Documentation() {
         </div>
 
         {/* ── Footer ── */}
-        <div className="doc-footer">
-          © 2026 <span className="doc-green">NIRVAAN</span> — Carbon Footprint Tracker Lite &nbsp;|&nbsp; Supporting <span className="doc-green">SDG 13</span>: Climate Action
-        </div>
-
       </div>
     </div>
   );

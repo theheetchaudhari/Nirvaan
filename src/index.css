@@ -1,5 +1,5 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;500;600;700&family=Instrument+Serif:ital,wght@0,400;1,400&family=Oswald:wght@200..700&display=swap');
 
 :root {
     --eco-light: rgba(57, 255, 20, 0.1);
@@ -19,15 +19,18 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Instrument Serif', serif;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at center, rgba(57, 255, 20, 0.15) 0%, #050505 80%);
+    font-family: 'Roboto Condensed', sans-serif;
     background-color: var(--bg-color);
-    background-attachment: fixed;
     color: var(--text-main);
     line-height: 1.5;
     scroll-behavior: smooth;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Layout */
@@ -79,9 +82,16 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: var(--eco-main);
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     text-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.nav-brand span {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -93,12 +103,13 @@ body {
     background: transparent;
     border: none;
     color: var(--text-muted);
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
     transition: color 0.3s;
     outline: none;
+    letter-spacing: 1px;
 }
 
 .nav-links button:hover {
@@ -120,23 +131,27 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 0.25rem;
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(4rem, 10vw, 6.5rem);
+    font-weight: 400;
+    margin-bottom: -0.25rem;
     text-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
-    line-height: 1.1;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    line-height: 0.95;
+    text-transform: none;
+    letter-spacing: -2px;
+    mix-blend-mode: difference;
+    position: relative;
+    z-index: 10;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--text-muted);
     margin-top: 1.5rem;
     margin-bottom: 2.5rem;
-    max-width: 650px;
+    max-width: 750px;
     margin-inline: auto;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .btn-primary {
@@ -180,7 +195,8 @@ body {
 
 /* Forms */
 .form-title {
-    font-size: 1.5rem;
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--text-main);
 }
@@ -272,8 +288,9 @@ body {
 }
 
 .result-value {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-family: 'Instrument Serif', serif;
+    font-size: 4.5rem;
+    font-weight: 400;
     color: var(--text-main);
     margin: 0.5rem 0;
     text-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
@@ -335,8 +352,9 @@ body {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
     color: var(--text-main);
 }
 
@@ -373,9 +391,11 @@ body {
 }
 
 .footer h4 {
+    font-family: 'Instrument Serif', serif;
     color: white;
     margin-bottom: 0.5rem;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
 }
 
@@ -402,11 +422,12 @@ body {
 }
 
 .contact-minimal-header h2 {
-    font-size: 2rem;
+    font-family: 'Instrument Serif', serif;
+    font-size: 3rem;
     color: #d4d4d4;
     margin-bottom: 0.2rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 400;
+    letter-spacing: 0px;
 }
 
 .contact-minimal-header p {
@@ -504,10 +525,11 @@ body {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
     color: var(--text-main);
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 .text-highlight {
@@ -680,11 +702,12 @@ body {
 }
 
 .insight-title {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
     color: white;
     margin-bottom: 0.75rem;
-    line-height: 1.2;
+    line-height: 1.1;
     transition: color 0.4s ease;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
@@ -776,7 +799,7 @@ body {
 
     .nav-links {
         width: 100%;
-        gap: 0.5rem;
+        gap: 1rem;
         flex-wrap: nowrap;
         justify-content: flex-start;
         overflow-x: auto;
@@ -790,19 +813,23 @@ body {
 
     .nav-links button {
         font-size: 0.85rem;
-        padding: 0.45rem 0.8rem;
-        min-height: 40px;
-        border: 1px solid rgba(156, 163, 175, 0.25);
-        border-radius: 9999px;
+        padding: 0.5rem 0.25rem;
+        min-height: auto;
+        border: none;
+        border-radius: 0;
         white-space: nowrap;
+        background: transparent;
     }
 
     /* Hero: phone-first composition */
     .hero {
         text-align: center;
         align-items: center;
-        padding: 1.6rem 0.25rem 1.25rem;
-        min-height: auto;
+        padding: 2rem 1rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .hero .container {
@@ -812,16 +839,18 @@ body {
     }
 
     .hero h1 {
-        font-size: clamp(2rem, 9vw, 2.8rem);
-        letter-spacing: -0.5px;
+        font-size: clamp(2.8rem, 13vw, 4.2rem);
+        letter-spacing: -1px;
+        line-height: 1.0;
     }
 
     .hero p {
-        font-size: 1rem;
-        margin-top: 0.8rem;
-        margin-bottom: 1.6rem;
+        font-size: 1.15rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
         margin-inline: 0;
         max-width: none;
+        line-height: 1.4;
     }
 
     .btn-primary {
@@ -993,11 +1022,11 @@ body {
 
 @media (max-width: 420px) {
     .hero h1 {
-        font-size: clamp(1.65rem, 9.5vw, 2.1rem);
+        font-size: clamp(2.2rem, 11vw, 2.8rem);
     }
 
     .hero p {
-        font-size: 0.94rem;
+        font-size: 1.05rem;
     }
 
     .badge {

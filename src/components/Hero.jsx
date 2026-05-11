@@ -18,7 +18,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero">
+    <div className="hero" style={{ position: 'relative' }}>
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
