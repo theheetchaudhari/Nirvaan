@@ -11,7 +11,7 @@ const ResultCard = ({ total, rating }) => {
       transition={{ duration: 0.4 }}
     >
       <CloudRain size={40} color="var(--text-muted)" style={{ marginBottom: '0.5rem' }} />
-      <h3 style={{ color: 'var(--text-muted)', fontSize: '0.875rem', textTransform: 'uppercase' }}>Total Daily Emissions</h3>
+      <h3 style={{ color: 'var(--text-muted)', fontSize: 'var(--fs-sm)', textTransform: 'uppercase' }}>Total Daily Emissions</h3>
       
       <div className="result-value">
         {total} <span className="result-unit">kg CO₂</span>

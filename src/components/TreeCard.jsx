@@ -12,11 +12,11 @@ const TreeCard = ({ trees }) => {
     >
       <div>
         <h3 style={{ color: 'var(--eco-darker)', marginBottom: '0.25rem' }}>Offset Required</h3>
-        <p style={{ color: 'var(--eco-dark)', fontSize: '0.875rem' }}>Trees needed to absorb your daily CO₂ emissions.</p>
+        <p style={{ color: 'var(--eco-dark)', fontSize: 'var(--fs-sm)' }}>Trees needed to absorb your daily CO₂ emissions.</p>
       </div>
       <div className="tree-number-box">
         <TreePine size={32} color="var(--eco-dark)" style={{ margin: '0 auto' }} />
-        <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--text-main)' }}>{trees}</span>
+        <span style={{ fontSize: 'var(--fs-xl)', fontWeight: 'var(--fw-bold)', color: 'var(--text-main)' }}>{trees}</span>
       </div>
     </motion.div>
   );

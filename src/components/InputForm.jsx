@@ -68,7 +68,7 @@ const CustomSelect = ({ options, value, onChange, name }) => {
                   color: opt.value === value ? 'var(--eco-main)' : 'var(--text-main)',
                   background: opt.value === value ? 'rgba(57, 255, 20, 0.1)' : 'transparent',
                   transition: 'all 0.2s ease',
-                  fontSize: '0.95rem'
+                  fontSize: 'var(--fs-sm)'
                 }}
                 onClick={() => {
                   onChange({ target: { name, value: opt.value } });
