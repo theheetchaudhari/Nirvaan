@@ -361,7 +361,7 @@ body {
 
 .rating-High {
     background: rgba(153, 27, 27, 0.8);
-    color: #fca5a5;
+    color: var(--text-main);
     border: 1px solid #991b1b;
 }
 
@@ -879,6 +879,7 @@ body {
         font-size: var(--fs-display-1);
         letter-spacing: -1px;
         line-height: var(--lh-tight);
+        mix-blend-mode: normal;
     }
 
     .hero p {
