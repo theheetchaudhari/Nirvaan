@@ -38,7 +38,7 @@ function HomePage() {
   const handleCalculate = (formData) => {
     const calculatedData = calculateFootprint(formData);
     setResults(calculatedData);
-    
+
     setTimeout(() => {
       document.getElementById('results-section')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
@@ -48,7 +48,7 @@ function HomePage() {
     <main className="main-content">
       <Hero />
       <EarthSignalsSection />
-      
+
       <div id="calculator" className="calculator-section container">
         <AnimatePresence mode="wait">
           {!results ? (
@@ -83,9 +83,9 @@ function HomePage() {
                   <TipsCard tips={results.tips} />
                 </motion.div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} style={{ textAlign: 'center' }}>
-                  <button 
-                    onClick={() => setResults(null)} 
-                    className="btn-primary" 
+                  <button
+                    onClick={() => setResults(null)}
+                    className="btn-primary"
                     style={{ width: '100%', marginTop: '0.5rem' }}
                   >
                     Calculate Again
