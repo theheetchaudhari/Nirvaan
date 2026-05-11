@@ -11,7 +11,7 @@ const TreeCard = ({ trees }) => {
       transition={{ duration: 0.4, delay: 0.1 }}
     >
       <div>
-        <h3 style={{ color: 'var(--eco-darker)', marginBottom: '0.25rem' }}>Offset Required</h3>
+        <h3 style={{ color: '#ffffff', fontSize: 'var(--fs-2xl)', marginBottom: '0.25rem' }}>Offset Required</h3>
         <p style={{ color: 'var(--eco-dark)', fontSize: 'var(--fs-sm)' }}>Trees needed to absorb your daily CO₂ emissions.</p>
       </div>
       <div className="tree-number-box">
