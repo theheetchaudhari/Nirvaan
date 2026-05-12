@@ -1,5 +1,5 @@
 import React from 'react';
-import { Leaf, FileText } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
@@ -31,13 +31,6 @@ const Navbar = () => {
           <button onClick={() => scrollTo('calculator')}>CALCULATOR</button>
           <button onClick={() => scrollTo('insights')}>INSIGHTS</button>
           <button onClick={() => scrollTo('contact')}>CONTACT</button>
-          <button
-            onClick={() => navigate('/documentation')}
-            style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--eco-main)' }}
-          >
-            <FileText size={14} />
-            DOCS
-          </button>
         </div>
       </div>
     </nav>

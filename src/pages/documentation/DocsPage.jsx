@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import {
   FileText, Car, Zap, Droplets, Flame, Leaf,
   ShieldCheck, ExternalLink, Calculator, Info,
@@ -59,8 +60,27 @@ const Accordion = ({ icon: Icon, title, children, defaultOpen = false }) => {
 export default function Documentation() {
   const navigate = useNavigate();
 
+  const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="doc-page">
+      {/* ── Scroll Progress Line ── */}
+      <div className="doc-scroll-line-container">
+        <motion.div 
+          className="doc-scroll-line-fill"
+          style={{ scaleY }}
+        />
+      </div>
+
       <div className="doc-wrap">
 
         {/* ── Back ── */}

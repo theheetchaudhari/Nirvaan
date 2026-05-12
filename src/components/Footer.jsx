@@ -12,7 +12,10 @@ const Footer = () => {
       <div className="footer-divider"></div>
       <p style={{ fontSize: '0.75rem', opacity: 0.7 }}>© 2026 NIRVAAN | Carbon Footprint Tracker Lite. All rights reserved.</p>
       <button
-        onClick={() => navigate('/documentation')}
+        onClick={() => {
+          navigate('/documentation');
+          window.scrollTo(0, 0);
+        }}
         style={{
           marginTop: '0.85rem',
           display: 'inline-flex',

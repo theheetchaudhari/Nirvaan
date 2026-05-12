@@ -75,12 +75,12 @@ export default function NeonLiquidBg() {
       </Canvas>
 
       {/* glow overlay */}
-      <div style={{ 
-        position: 'absolute', 
-        top: 0, 
-        left: 0, 
-        width: '100%', 
-        height: '100%', 
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
         background: 'radial-gradient(circle at 20% 30%, rgba(0, 255, 120, 0.15), transparent 35%), radial-gradient(circle at 80% 70%, rgba(0, 255, 200, 0.08), transparent 40%)',
         pointerEvents: 'none'
       }} />
