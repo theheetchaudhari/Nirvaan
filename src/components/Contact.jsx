@@ -23,6 +23,8 @@ const InstagramIcon = () => (
 const Contact = () => {
   const [nextUrl, setNextUrl] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     // Generate the next URL with a success parameter to return to this page smoothly without a blank screen
@@ -36,6 +38,41 @@ const Contact = () => {
       window.history.replaceState(null, '', window.location.pathname + '#contact');
     }
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    try {
+      const formData = new FormData(e.target);
+      const data = {
+        name: formData.get('name'),
+        message: formData.get('message'),
+        _subject: 'New Anonymous Feedback from Nirvaan 🌱',
+      };
+
+      const response = await fetch('https://formsubmit.co/ajax/nirvaan.earthlab@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+      } else {
+        setErrorMessage('The feedback service is temporarily offline (522 Outage). Please try again later, or contact us directly via email below!');
+      }
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      setErrorMessage('Network error. Please check your internet connection or email us directly!');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="contact-minimal container">
@@ -64,7 +101,7 @@ const Contact = () => {
           </div>
         </motion.div>
         <motion.div 
-          className="contact-minimal-form"
+          className="contact-minimal-form glass-form"
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -72,28 +109,58 @@ const Contact = () => {
           {isSuccess ? (
             <div style={{ textAlign: 'center', padding: '2rem 0' }}>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#d4d4d4' }}>Thank You! 🌱</h3>
-              <p style={{ marginBottom: '1.5rem', fontSize: '1.2rem', color: '#a3a3a3' }}>Your message has been sent successfully.</p>
+              <p style={{ marginBottom: '1.5rem', fontSize: '1.2rem', color: '#a3a3a3' }}>Your feedback has been sent successfully.</p>
               <button 
-                onClick={() => setIsSuccess(false)}
+                onClick={() => {
+                  setIsSuccess(false);
+                  setErrorMessage('');
+                }}
                 style={{ margin: '0 auto' }}
               >
-                Send another message
+                Submit more feedback
               </button>
             </div>
           ) : (
-            <form action="https://formsubmit.co/nirvaan.earthlab@gmail.com" method="POST">
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="New Message from Nirvaan 🌱" />
-              <input type="hidden" name="_next" value={nextUrl} />
-              
-              <input type="text" name="name" placeholder="name" required />
-              <input type="email" name="email" placeholder="email" required />
-              <textarea name="message" placeholder="message..." rows="3" required></textarea>
-              
-              <button type="submit">
-                <Send size={16} /> send
-              </button>
-            </form>
+            <>
+              <h3 style={{ fontSize: '1.25rem', color: '#d4d4d4', marginBottom: '1rem', fontFamily: 'var(--font-display)', fontWeight: 'var(--fw-regular)', letterSpacing: '0.5px' }}>Anonymous Feedback</h3>
+              <form 
+                action="https://formsubmit.co/nirvaan.earthlab@gmail.com" 
+                method="POST"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="New Anonymous Feedback from Nirvaan 🌱" />
+                <input type="hidden" name="_next" value={nextUrl} />
+                
+                <input type="text" name="name" placeholder="name" required />
+                <textarea name="message" placeholder="feedback..." rows="2" required></textarea>
+                
+                {errorMessage && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    style={{ 
+                      color: '#ff6b6b', 
+                      fontSize: '0.875rem', 
+                      marginTop: '0.5rem',
+                      padding: '0.5rem 0.75rem',
+                      border: '1px solid rgba(255, 107, 107, 0.2)',
+                      background: 'rgba(255, 107, 107, 0.05)',
+                      borderRadius: '8px',
+                      textAlign: 'left',
+                      boxShadow: '0 0 10px rgba(255, 107, 107, 0.05)',
+                      lineHeight: '1.4'
+                    }}
+                  >
+                    ⚠️ {errorMessage}
+                  </motion.div>
+                )}
+
+                <button type="submit" disabled={isSubmitting}>
+                  <Send size={16} /> {isSubmitting ? 'sending...' : 'send'}
+                </button>
+              </form>
+            </>
           )}
         </motion.div>
       </div>
