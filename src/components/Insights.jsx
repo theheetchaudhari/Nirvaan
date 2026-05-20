@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Car, Zap, Droplets, Utensils, Flame, Leaf, Fuel, Cloud, Beef, Trees, Globe } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { Car, Zap, Droplets, Utensils, Flame, Leaf, Fuel, Cloud, Beef, Trees, Globe, X } from 'lucide-react';
 
 const insightsData = [
   {
@@ -87,6 +87,14 @@ const duplicatedData = [...insightsData, ...insightsData, ...insightsData];
 const Insights = () => {
   const scrollRef = useRef(null);
   const [isInteracting, setIsInteracting] = useState(false);
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const handleCardClick = (item) => {
+    // Only expand on smaller screens where text might be cut off
+    if (window.innerWidth <= 768) {
+      setExpandedCard(item);
+    }
+  };
 
   useEffect(() => {
     let animationFrameId;
@@ -140,7 +148,11 @@ const Insights = () => {
           {duplicatedData.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={`${item.id}-${index}`} className="insight-card">
+              <div 
+                key={`${item.id}-${index}`} 
+                className="insight-card"
+                onClick={() => handleCardClick(item)}
+              >
                 <div className="insight-image-bg" style={{ backgroundImage: `url(${item.image})` }}></div>
                 <div className="insight-card-overlay"></div>
                 
@@ -160,6 +172,48 @@ const Insights = () => {
           })}
         </div>
       </div>
+
+      {/* Expanded Card Modal for Mobile */}
+      <AnimatePresence>
+        {expandedCard && (() => {
+          const ExpandedIcon = expandedCard.icon;
+          return (
+            <motion.div 
+              className="insight-expanded-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setExpandedCard(null)}
+            >
+              <motion.div 
+                className="insight-expanded-card"
+                initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button className="insight-close-btn" onClick={() => setExpandedCard(null)}>
+                  <X size={24} />
+                </button>
+                <div className="insight-image-bg" style={{ backgroundImage: `url(${expandedCard.image})` }}></div>
+                <div className="insight-card-overlay"></div>
+                
+                <div className="insight-card-content">
+                  <div className="insight-icon-wrapper">
+                    <ExpandedIcon size={32} className="insight-icon" />
+                  </div>
+                  <h3 className="insight-title">{expandedCard.title}</h3>
+                  <div className="insight-text-wrapper expanded">
+                    {expandedCard.insight.split('\n').map((line, i) => (
+                      <p key={i} className="insight-text">{line}</p>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })()}
+      </AnimatePresence>
     </section>
   );
 };
