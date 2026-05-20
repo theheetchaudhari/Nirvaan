@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Car, Zap, Droplets, Utensils, Flame, Leaf } from 'lucide-react';
+import { Car, Zap, Droplets, Utensils, Flame, Leaf, Fuel, Cloud, Beef, Trees, Globe } from 'lucide-react';
 
 const insightsData = [
   {
@@ -44,6 +44,41 @@ const insightsData = [
   title: "Climate Chain Reaction",
   insight: "Daily human activities continuously release greenhouse gases.\nOver time these emissions contribute to global warming and climate change.",
   image: "https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop"
+},
+{
+  id: 7,
+  icon: Fuel,
+  title: "How Can Small Fuel Create So Much CO₂?",
+  insight: "Fuel combines with oxygen from the atmosphere while burning.\nThis chemical reaction creates a much heavier carbon dioxide gas output.",
+  image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop"
+},
+{
+  id: 8,
+  icon: Cloud,
+  title: "CO₂ Is Mostly Invisible",
+  insight: "Carbon dioxide is a gas, so emissions are usually invisible to the human eye.\nEven when we cannot see it, greenhouse gases are continuously released into the atmosphere.",
+  image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+},
+{
+  id: 9,
+  icon: Beef,
+  title: "Why Does Food Create Emissions?",
+  insight: "Food production requires farming, transportation, refrigeration, electricity, and packaging.\nAnimal farming also releases methane, a powerful greenhouse gas.",
+  image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop"
+},
+{
+  id: 10,
+  icon: Trees,
+  title: "Why Don’t Trees Absorb Everything?",
+  insight: "Trees absorb carbon naturally through photosynthesis, but the process is slow.\nHuman activities now release CO₂ much faster than forests can absorb it.",
+  image: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1200&auto=format&fit=crop"
+},
+{
+  id: 11,
+  icon: Globe,
+  title: "Then Why Is Earth Still Habitable?",
+  insight: "Nature continuously balances carbon using forests, oceans, and ecosystems.\nClimate change happens because emissions are increasing faster than Earth can naturally recover.",
+  image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop"
 }
 ];
 
