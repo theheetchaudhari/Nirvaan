@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import EarthSignalsSection from './components/EarthSignals/EarthSignals';
 import InputForm from './components/InputForm';
 import ResultCard from './components/ResultCard';
+import CarbonPieChart from './components/CarbonPieChart';
 import TreeCard from './components/TreeCard';
 import TipsCard from './components/TipsCard';
 import Insights from './components/Insights';
@@ -70,11 +71,12 @@ function HomePage() {
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5 }}
-              style={{ maxWidth: '600px', margin: '0 auto' }}
+              style={{ maxWidth: '800px', margin: '0 auto' }}
             >
               <div className="results-stack">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+                <motion.div className="result-card-container" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                   <ResultCard total={results.total} rating={results.rating} />
+                  <CarbonPieChart data={results.breakdown} />
                 </motion.div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
                   <TreeCard trees={results.trees} />

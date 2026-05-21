@@ -315,6 +315,22 @@ body {
     gap: 1.5rem;
 }
 
+.result-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .result-card-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    .result-card-container > * {
+        flex: 1;
+    }
+}
+
 /* Result Card Specifics */
 .result-card {
     border-top: 4px solid var(--eco-main);

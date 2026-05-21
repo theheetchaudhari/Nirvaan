@@ -48,6 +48,13 @@ export const calculateFootprint = (data) => {
     total: totalCO2.toFixed(2),
     rating,
     trees: trees.toFixed(2),
-    tips
+    tips,
+    breakdown: [
+      { name: 'Transport', value: transportCo2 },
+      { name: 'Electricity', value: electricityCo2 },
+      { name: 'Water', value: waterCo2 },
+      { name: 'LPG', value: lpgCo2 },
+      { name: 'Food', value: foodCo2 }
+    ].filter(item => item.value > 0)
   };
 };
