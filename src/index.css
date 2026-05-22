@@ -1215,3 +1215,18 @@ body {
   z-index: 10;
   backdrop-filter: blur(5px);
 }
+
+/* Remove default focus outlines on SVG charts (specifically Recharts) on mobile touch */
+.recharts-wrapper,
+.recharts-surface,
+.recharts-pie-sector,
+path.recharts-pie-sector,
+g.recharts-layer {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.recharts-pie-sector:focus,
+.recharts-pie-sector:active {
+  outline: none !important;
+}
