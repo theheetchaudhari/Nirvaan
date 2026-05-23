@@ -104,6 +104,20 @@ const InputForm = ({ onCalculate }) => {
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT') {
+      const form = e.target.form;
+      const index = Array.prototype.indexOf.call(form.elements, e.target);
+      if (index > -1) {
+        const nextElement = form.elements[index + 1];
+        if (nextElement && nextElement.type !== 'submit') {
+          e.preventDefault();
+          nextElement.focus();
+        }
+      }
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onCalculate(formData);
@@ -148,6 +162,7 @@ const InputForm = ({ onCalculate }) => {
       
       <motion.form 
         onSubmit={handleSubmit}
+        onKeyDown={handleKeyDown}
         variants={containerVariants}
         initial="hidden"
         animate="show"
@@ -177,7 +192,7 @@ const InputForm = ({ onCalculate }) => {
 
         <motion.div variants={itemVariants} className="form-group">
           <label className="form-label"><Flame size={16} color="#f97316" /> Cooking Gas (LPG)</label>
-          <input type="number" name="lpg" placeholder="Usage (kg)" value={formData.lpg} onChange={handleChange} className="form-control" min="0" step="any" />
+          <input type="number" name="lpg" placeholder="Usage (kg)" value={formData.lpg} onChange={handleChange} className="form-control" required min="0" step="any" />
         </motion.div>
 
         <motion.div variants={itemVariants} className="form-group">
