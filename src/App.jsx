@@ -12,6 +12,7 @@ import Insights from './components/Insights';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Documentation from './pages/documentation/DocsPage.jsx';
+import WeatherPage from './pages/WeatherPage.jsx';
 import NeonLiquidBg from './components/NeonLiquidBg';
 import { calculateFootprint } from './utils/carbonCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -112,6 +113,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/documentation" element={<Documentation />} />
+        <Route path="/weather" element={<WeatherPage />} />
       </Routes>
       <Footer />
     </div>
