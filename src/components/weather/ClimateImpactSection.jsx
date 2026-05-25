@@ -5,8 +5,8 @@ import { Factory, Zap, CloudOff } from 'lucide-react';
 const ClimateImpactSection = () => {
   return (
     <div style={{ marginBottom: '4rem' }}>
-      <h2 className="section-heading">How Weather Influences Carbon Emissions</h2>
-      
+      <h2 className="section-heading">How Weather Influences Carbon Emissions ?</h2>
+
       <div className="weather-grid-3">
         <motion.div className="impact-card" whileHover={{ y: -5 }}>
           <div className="impact-icon"><Zap size={32} /></div>
