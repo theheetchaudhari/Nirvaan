@@ -2,12 +2,23 @@ import React from 'react';
 import { Wind } from 'lucide-react';
 import PollutionGauge from './PollutionGauge';
 
-const AQICard = ({ aqiData }) => {
-  if (!aqiData || !aqiData.list || aqiData.list.length === 0) return null;
+const AQICard = ({ aqi }) => {
+  if (!aqi || !aqi.list || aqi.list.length === 0) return null;
 
-  const data = aqiData.list[0];
-  const aqi = data.main.aqi;
+  const data = aqi.list[0];
+  const aqiValue = data.main.aqi;
   const components = data.components;
+
+  const getAqiLabel = (val) => {
+    switch(val) {
+      case 1: return 'Good';
+      case 2: return 'Fair';
+      case 3: return 'Moderate';
+      case 4: return 'Poor';
+      case 5: return 'Very Poor';
+      default: return 'Unknown';
+    }
+  };
 
   return (
     <div className="w-card">
@@ -15,7 +26,7 @@ const AQICard = ({ aqiData }) => {
         <Wind size={24} /> Air Quality Index
       </h3>
       
-      <PollutionGauge aqi={aqi} />
+      <PollutionGauge aqi={aqiValue} />
       
       <div className="pollutants-grid">
         <div className="pollutant-item">

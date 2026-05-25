@@ -26,13 +26,13 @@ const WeatherCharts = ({ forecast }) => {
 
   return (
     <div style={{ marginBottom: '4rem' }}>
-      <h2 className="section-heading">Sustainability Analytics</h2>
+      <h2 className="section-heading">Sustainability <span style={{ color: 'var(--primary, #39ff14)' }}>Analytics</span></h2>
       <div className="weather-grid-2">
         
         <div className="w-card">
           <h3 className="w-card-title">Temperature Trend (Next 24h)</h3>
-          <div style={{ width: '100%', height: 300 }}>
-            <ResponsiveContainer>
+          <div className="weather-chart-container">
+            <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorTemp" x1="0" y1="0" x2="0" y2="1">
@@ -55,8 +55,8 @@ const WeatherCharts = ({ forecast }) => {
 
         <div className="w-card">
           <h3 className="w-card-title">Humidity Trend (Next 24h)</h3>
-          <div style={{ width: '100%', height: 300 }}>
-            <ResponsiveContainer>
+          <div className="weather-chart-container">
+            <ResponsiveContainer width="100%" height="100%">
               <LineChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
                 <XAxis dataKey="time" stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} />

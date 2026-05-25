@@ -1,4 +1,5 @@
 import React from 'react';
+import { Droplets, CloudRain, Wind } from 'lucide-react';
 
 const ForecastSection = ({ forecast }) => {
   if (!forecast || !forecast.list) return null;
@@ -32,7 +33,19 @@ const ForecastSection = ({ forecast }) => {
               className="f-icon"
             />
             <div className="f-temp">{Math.round(day.main.temp_max || day.main.temp)}°C</div>
-            <div className="f-desc">{day.weather[0].main}</div>
+            
+            <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', display: 'flex', flexDirection: 'column', gap: '0.25rem', marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                <Droplets size={12} color="var(--eco-main)"/> {day.main.humidity}%
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                <CloudRain size={12} color="#3b82f6"/> {Math.round((day.pop || 0) * 100)}%
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}>
+                <Wind size={12} color="gray"/> {Math.round(day.wind.speed)}m/s
+              </div>
+            </div>
+
           </div>
         ))}
       </div>

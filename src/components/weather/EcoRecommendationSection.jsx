@@ -2,35 +2,36 @@ import React from 'react';
 import { Leaf, AlertTriangle, CloudRain, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const EcoRecommendationSection = ({ current, aqiData }) => {
-  if (!current || !aqiData || !aqiData.list) return null;
+const EcoRecommendationSection = ({ weather, aqi }) => {
+  if (!weather || !aqi || !aqi.list) return null;
 
-  const temp = current.main.temp;
-  const aqi = aqiData.list[0].main.aqi;
-  const isRaining = current.weather[0].main === 'Rain' || current.weather[0].main === 'Drizzle';
+  const temp = weather.main.temp;
+  const aqiVal = aqi.list[0].main.aqi;
+  const isRaining = weather.weather[0].main === 'Rain' || weather.weather[0].main === 'Drizzle';
   
   const recommendations = [];
 
-  // Logic based on requirements
-  if (temp > 28) {
+  if (temp > 35) {
     recommendations.push({
       icon: <Sun size={24} />,
       title: 'High Temperature Alert',
-      text: 'Reduce AC dependency by using ventilation during cooler hours (early morning/late evening).'
+      text: 'Reduce AC usage to lower indirect CO₂ emissions.'
     });
-  } else if (temp > 18 && temp <= 25 && aqi <= 2) {
+  }
+  
+  if (aqiVal <= 2) {
     recommendations.push({
       icon: <Leaf size={24} />,
       title: 'Optimal Conditions',
-      text: 'Excellent conditions for cycling or walking instead of driving.'
+      text: 'Good air quality detected. Prefer cycling or walking.'
     });
   }
 
-  if (aqi >= 4) {
+  if (aqiVal >= 4) {
     recommendations.push({
       icon: <AlertTriangle size={24} />,
       title: 'Poor Air Quality',
-      text: 'Avoid unnecessary vehicle emissions today. Consider working remotely if possible to reduce local pollution.'
+      text: 'Avoid unnecessary vehicle emissions today.'
     });
   }
 
@@ -38,7 +39,7 @@ const EcoRecommendationSection = ({ current, aqiData }) => {
     recommendations.push({
       icon: <CloudRain size={24} />,
       title: 'Rain Forecast',
-      text: 'Prefer public transportation to reduce congestion emissions, as rain slows traffic.'
+      text: 'Use public transport during rainfall to reduce congestion emissions.'
     });
   }
 
@@ -52,7 +53,7 @@ const EcoRecommendationSection = ({ current, aqiData }) => {
 
   return (
     <div style={{ marginBottom: '4rem' }}>
-      <h2 className="section-heading">Smart Eco Recommendations</h2>
+      <h2 className="section-heading">Smart Eco <span style={{ color: 'var(--primary, #39ff14)' }}>Recommendations</span></h2>
       <div className="weather-grid-2">
         {recommendations.map((rec, i) => (
           <motion.div key={i} className="w-card eco-rec-card" whileHover={{ scale: 1.02 }}>
