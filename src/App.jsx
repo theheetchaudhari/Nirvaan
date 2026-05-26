@@ -100,7 +100,6 @@ function HomePage() {
         </AnimatePresence>
       </div>
       <Insights />
-      <Contact />
     </main>
   );
 }
@@ -115,6 +114,7 @@ function App() {
         <Route path="/documentation" element={<Documentation />} />
         <Route path="/weather" element={<WeatherPage />} />
       </Routes>
+      <Contact />
       <Footer />
     </div>
   );
