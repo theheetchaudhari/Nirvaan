@@ -47,7 +47,7 @@ function HomePage() {
   };
 
   return (
-    <main className="main-content">
+    <>
       <Hero />
       <EarthSignalsSection />
 
@@ -100,7 +100,7 @@ function HomePage() {
         </AnimatePresence>
       </div>
       <Insights />
-    </main>
+    </>
   );
 }
 
@@ -109,12 +109,14 @@ function App() {
     <div className="app-container">
       <NeonLiquidBg />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/documentation" element={<Documentation />} />
-        <Route path="/weather" element={<WeatherPage />} />
-      </Routes>
-      <Contact />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/weather" element={<WeatherPage />} />
+        </Routes>
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

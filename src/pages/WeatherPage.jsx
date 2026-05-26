@@ -128,6 +128,15 @@ const WeatherPage = () => {
       </div>
 
       <SustainabilityInsights />
+
+      <div className="weather-page container" style={{ paddingBottom: '0rem' }}>
+        <div className="weather-cta">
+          <h2>Small environmental actions create long-term climate impact.</h2>
+          <button className="btn-primary" onClick={() => navigate('/')}>
+            Calculate Carbon Footprint
+          </button>
+        </div>
+      </div>
     </>
   );
 };
