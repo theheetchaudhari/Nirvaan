@@ -16,7 +16,7 @@ const WeatherCharts = ({ forecast }) => {
 
   // Process data for charts
   const chartData = forecast.list.slice(0, 8).map(item => {
-    const time = new Date(item.dt_txt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const time = new Date(item.dt_txt.replace(' ', 'T')).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     return {
       time,
       temp: Math.round(item.main.temp),

@@ -16,27 +16,27 @@ const CurrentWeatherCard = ({ weather }) => {
       <div className="current-stats-grid">
         <div className="stat-item">
           <span className="stat-label"><Thermometer size={16} /> Feels Like</span>
-          <span className="stat-value">{Math.round(weather.main.feels_like)}°C</span>
+          <span className="stat-value">{Math.round(weather.main?.feels_like || 0)}°C</span>
         </div>
         <div className="stat-item">
           <span className="stat-label"><Droplets size={16} /> Humidity</span>
-          <span className="stat-value">{weather.main.humidity}%</span>
+          <span className="stat-value">{weather.main?.humidity || 0}%</span>
         </div>
         <div className="stat-item">
           <span className="stat-label"><Wind size={16} /> Wind</span>
-          <span className="stat-value">{weather.wind.speed} m/s</span>
+          <span className="stat-value">{weather.wind?.speed || 0} m/s</span>
         </div>
         <div className="stat-item">
           <span className="stat-label"><Compass size={16} /> Pressure</span>
-          <span className="stat-value">{weather.main.pressure} hPa</span>
+          <span className="stat-value">{weather.main?.pressure || 0} hPa</span>
         </div>
         <div className="stat-item">
           <span className="stat-label"><Eye size={16} /> Visibility</span>
-          <span className="stat-value">{(weather.visibility / 1000).toFixed(1)} km</span>
+          <span className="stat-value">{((weather.visibility || 0) / 1000).toFixed(1)} km</span>
         </div>
         <div className="stat-item">
           <span className="stat-label"><Sunrise size={16} /> Sunrise</span>
-          <span className="stat-value">{formatTime(weather.sys.sunrise)}</span>
+          <span className="stat-value">{weather.sys?.sunrise ? formatTime(weather.sys.sunrise) : '--:--'}</span>
         </div>
       </div>
     </div>

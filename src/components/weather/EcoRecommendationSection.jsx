@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 const EcoRecommendationSection = ({ weather, aqi }) => {
   if (!weather || !aqi || !aqi.list) return null;
 
-  const temp = weather.main.temp;
-  const aqiVal = aqi.list[0].main.aqi;
-  const isRaining = weather.weather[0].main === 'Rain' || weather.weather[0].main === 'Drizzle';
+  const temp = weather.main?.temp || 0;
+  const aqiVal = aqi.list[0]?.main?.aqi || 1;
+  const weatherMain = weather.weather?.[0]?.main;
+  const isRaining = weatherMain === 'Rain' || weatherMain === 'Drizzle';
   
   const recommendations = [];
 

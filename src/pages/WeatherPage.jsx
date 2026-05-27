@@ -56,19 +56,19 @@ const WeatherPage = () => {
         setLoading(true);
         setError(null);
         
-        // Single API fetch architecture with Promise.all
-        const [weatherData, forecastData, aqiData] = await Promise.all([
+        // Single API fetch architecture with Promise.allSettled for fault tolerance
+        const results = await Promise.allSettled([
           getCurrentWeather(lat, lon),
           getForecast(lat, lon),
           getAQI(lat, lon)
         ]);
 
-        setWeather(weatherData);
-        setForecast(forecastData);
-        setAqi(aqiData);
+        setWeather(results[0].status === 'fulfilled' ? results[0].value : mockCurrentWeather);
+        setForecast(results[1].status === 'fulfilled' ? results[1].value : mockForecast);
+        setAqi(results[2].status === 'fulfilled' ? results[2].value : mockAQI);
       } catch (err) {
-        console.error("API Error (Falling back to mock data):", err);
-        // Fallback to mock data if API key is unactivated (401)
+        console.error("Critical Error (Falling back to mock data):", err);
+        // Fallback to mock data if there's an unexpected synchronous error
         setWeather(mockCurrentWeather);
         setForecast(mockForecast);
         setAqi(mockAQI);

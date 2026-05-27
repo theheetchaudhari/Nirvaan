@@ -4,9 +4,11 @@ import { motion } from 'framer-motion';
 const WeatherHero = ({ weather }) => {
   if (!weather) return null;
 
-  const weatherInfo = weather.weather[0];
+  const weatherInfo = weather.weather?.[0];
+  if (!weatherInfo) return null;
+
   const isNight = weatherInfo.icon.includes('n');
-  const temp = Math.round(weather.main.temp);
+  const temp = Math.round(weather.main?.temp || 0);
   
   let bgGradient = 'linear-gradient(135deg, rgba(10,10,10,0.8), rgba(30,30,30,0.9))';
 
