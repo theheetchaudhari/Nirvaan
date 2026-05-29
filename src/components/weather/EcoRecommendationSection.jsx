@@ -54,7 +54,7 @@ const EcoRecommendationSection = ({ weather, aqi }) => {
 
   return (
     <div style={{ marginBottom: '4rem' }}>
-      <h2 className="section-heading">Smart Eco <span style={{ color: 'var(--primary, #39ff14)' }}>Recommendations</span></h2>
+      <h2 className="section-heading">Smart Eco <span style={{ color: '#ffffff' }}>Recommendations</span></h2>
       <div className="weather-grid-2">
         {recommendations.map((rec, i) => (
           <motion.div key={i} className="w-card eco-rec-card" whileHover={{ scale: 1.02 }}>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const PollutionGauge = ({ aqi }) => {
   // AQI Mapping: 1 = Good, 2 = Fair, 3 = Moderate, 4 = Poor, 5 = Very Poor
-  const colors = ['#00e400', '#ffff00', '#ff7e00', '#ff0000', '#8f3f97'];
+  const colors = ['#3b82f6', '#eab308', '#f97316', '#ef4444', '#a855f7'];
   const labels = ['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'];
   
   const aqiIndex = Math.max(0, Math.min(4, aqi - 1));

@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import Documentation from './pages/documentation/DocsPage.jsx';
 import WeatherPage from './pages/WeatherPage.jsx';
 import NeonLiquidBg from './components/NeonLiquidBg';
+import WeatherBg from './components/weather/WeatherBg';
 import { calculateFootprint } from './utils/carbonCalculator';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -105,9 +106,13 @@ function HomePage() {
 }
 
 function App() {
+  const location = useLocation();
+
+  const isWeatherPage = location.pathname === '/weather';
+
   return (
-    <div className="app-container">
-      <NeonLiquidBg />
+    <div className={`app-container ${isWeatherPage ? 'weather-active' : ''}`}>
+      {isWeatherPage ? <WeatherBg /> : <NeonLiquidBg />}
       <Navbar />
       <main className="main-content">
         <Routes>

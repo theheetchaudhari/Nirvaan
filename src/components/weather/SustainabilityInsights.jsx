@@ -153,7 +153,7 @@ const SustainabilityInsights = () => {
             width: 'auto'
           }}
         >
-          Sustainability <span style={{ color: 'rgb(57, 255, 20)', textShadow: 'rgba(57, 255, 20, 0.4) 0px 0px 15px' }}>Insights</span>
+          Sustainability <span style={{ color: '#ffffff' }}>Insights</span>
         </h2>
       </div>
       
@@ -183,7 +183,7 @@ const SustainabilityInsights = () => {
                 <div className="insight-card-overlay"></div>
                 
                 <div className="insight-card-content">
-                  <div className="insight-icon-wrapper" style={{ background: 'rgba(57, 255, 20, 0.15)', color: 'var(--eco-main)' }}>
+                  <div className="insight-icon-wrapper" style={{ background: 'rgba(255, 255, 255, 0.2)', color: 'var(--eco-main)' }}>
                     <Icon size={24} className="insight-icon" />
                   </div>
                   <h3 className="insight-title">{item.title}</h3>
