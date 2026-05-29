@@ -35,5 +35,13 @@
   @keyframes float-horizontal {
     0% { transform: translateX(0) scale(var(--cloud-scale, 1)); }
     100% { transform: translateX(calc(100vw + 800px)) scale(var(--cloud-scale, 1)); }
-  }
+}
+
+/* Remove glass morphism from hero section so background shows through */
+.weather-hero {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }

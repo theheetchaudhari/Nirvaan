@@ -8,6 +8,7 @@ import ClimateImpactSection from '../components/weather/ClimateImpactSection';
 import EcoRecommendationSection from '../components/weather/EcoRecommendationSection';
 import SustainabilityInsights from '../components/weather/SustainabilityInsights';
 import WeatherCharts from '../components/weather/WeatherCharts';
+import WeatherBg from '../components/weather/WeatherBg';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Weather.css';
 
@@ -127,6 +128,7 @@ const WeatherPage = () => {
 
   return (
     <>
+      <WeatherBg />
       <div className="weather-page container" style={{ paddingTop: '2rem' }}>
         <WeatherHero weather={weather} />
         
