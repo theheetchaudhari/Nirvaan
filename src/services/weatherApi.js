@@ -26,3 +26,13 @@ export const getAQI = async (lat, lon) => {
   const response = await axios.get(`${BASE_URL}/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
   return response.data;
 };
+
+export const getLocationDetails = async (lat, lon) => {
+  try {
+    const response = await axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${API_KEY}`);
+    return response.data && response.data.length > 0 ? response.data[0] : null;
+  } catch (error) {
+    console.error("Geocoding API error:", error);
+    return null;
+  }
+};

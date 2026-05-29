@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getCurrentWeather, getForecast, getAQI } from '../services/weatherApi';
+import { getCurrentWeather, getForecast, getAQI, getLocationDetails } from '../services/weatherApi';
 import WeatherHero from '../components/weather/WeatherHero';
 import CurrentWeatherCard from '../components/weather/CurrentWeatherCard';
 import AQICard from '../components/weather/AQICard';
@@ -60,10 +60,25 @@ const WeatherPage = () => {
         const results = await Promise.allSettled([
           getCurrentWeather(lat, lon),
           getForecast(lat, lon),
-          getAQI(lat, lon)
+          getAQI(lat, lon),
+          getLocationDetails(lat, lon)
         ]);
 
-        setWeather(results[0].status === 'fulfilled' ? results[0].value : mockCurrentWeather);
+        let weatherData = results[0].status === 'fulfilled' ? results[0].value : mockCurrentWeather;
+        
+        // If we got location details from the Reverse Geocoding API, format a better name
+        if (results[3] && results[3].status === 'fulfilled' && results[3].value) {
+          const geo = results[3].value;
+          // Creates a string like "Pune, Maharashtra, IN"
+          const locationName = [geo.name, geo.state, geo.country].filter(Boolean).join(', ');
+          
+          weatherData = {
+            ...weatherData,
+            name: locationName
+          };
+        }
+
+        setWeather(weatherData);
         setForecast(results[1].status === 'fulfilled' ? results[1].value : mockForecast);
         setAqi(results[2].status === 'fulfilled' ? results[2].value : mockAQI);
       } catch (err) {
