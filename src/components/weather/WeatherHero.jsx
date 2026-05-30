@@ -30,7 +30,6 @@ const WeatherHero = ({ weather }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      style={{ background: bgGradient }}
     >
       <div className="weather-hero-content">
         <motion.div

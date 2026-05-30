@@ -159,10 +159,6 @@
     justify-content: center;
     min-height: 260px;
     color: var(--weather-text-main);
-    box-shadow: 0 10px 30px var(--weather-shadow);
-    background: var(--weather-glass-bg);
-    backdrop-filter: blur(16px);
-    border: 1px solid var(--weather-glass-border);
     width: 100%;
 }
 
