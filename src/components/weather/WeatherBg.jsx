@@ -20,6 +20,32 @@ export default function WeatherBg() {
 
   return (
     <div className="weather-bg-container">
+      <style>{`
+        .navbar {
+          background: rgba(255, 255, 255, 0.1) !important;
+          backdrop-filter: blur(16px) !important;
+          -webkit-backdrop-filter: blur(16px) !important;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+        .nav-links button {
+          color: #ffffff !important;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+          font-weight: 600 !important;
+        }
+        .nav-links button:hover, .nav-links button:active {
+          color: #00ffff !important;
+          text-shadow: 0 0 10px rgba(0, 255, 255, 0.8) !important;
+        }
+        .leaf-icon {
+          color: #ffffff !important;
+          transition: all 0.3s ease !important;
+        }
+        .weather-nav-btn:hover .leaf-icon {
+          color: #39ff14 !important;
+          filter: drop-shadow(0 0 8px rgba(57, 255, 20, 0.8)) !important;
+        }
+      `}</style>
       {clouds.map((cloud) => (
         <img
           key={cloud.id}
