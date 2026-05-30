@@ -25,7 +25,7 @@ const WeatherCharts = ({ forecast }) => {
   });
 
   return (
-    <div style={{ marginBottom: '4rem' }}>
+    <div id="analytics" style={{ marginBottom: '4rem' }}>
       <h2 className="section-heading">Sustainability <span style={{ color: '#ffffff' }}>Analytics</span></h2>
       <div className="weather-grid-2">
         
