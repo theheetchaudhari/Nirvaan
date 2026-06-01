@@ -33,6 +33,7 @@ Unlike traditional complex carbon calculators, NIRVAAN focuses on:
 - 🌱 Eco-friendly recommendations
 - 📊 Impact rating system
 - 📈 Interactive insights section
+- 🌤️ Real-time Weather & AQI integration
 - 🎨 Modern responsive UI
 - ✨ Smooth animations & transitions
 - 📱 Mobile-friendly design
@@ -48,6 +49,9 @@ Unlike traditional complex carbon calculators, NIRVAAN focuses on:
 - HTML5
 - CSS3
 
+## APIs & Services
+- OpenWeather API (Current Weather, Forecast, Air Quality Index)
+
 ## Deployment
 - Vercel
 
@@ -62,6 +66,9 @@ Unlike traditional complex carbon calculators, NIRVAAN focuses on:
 
 ## 🌍 Interactive Landing Page
 A visually engaging homepage focused on climate awareness and sustainability.
+
+## ⛅ Real-Time Weather & Air Quality
+Integrated personalized climate dashboard displaying real-time weather conditions, 5-day forecasts, and Air Quality Index (AQI) based on the user's location, powered by the OpenWeather API.
 
 ## 📊 Smart Carbon Calculator
 Users can quickly calculate estimated carbon emissions with minimal inputs.
