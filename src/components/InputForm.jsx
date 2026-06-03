@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Car, Zap, Droplets, Flame, Utensils, ChevronDown } from 'lucide-react';
+import { Car, Zap, Droplets, Flame, Utensils, ChevronDown, Info } from 'lucide-react';
 
 const CustomSelect = ({ options, value, onChange, name }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,6 +99,8 @@ const CustomSelect = ({ options, value, onChange, name }) => {
 };
 
 const InputForm = ({ onCalculate }) => {
+  const navigate = useNavigate();
+  const [showTooltip, setShowTooltip] = useState(false);
   const [formData, setFormData] = useState({
     transportType: 'car', distance: '', electricity: '', water: '', lpg: '', foodType: 'mixed'
   });
@@ -158,7 +161,81 @@ const InputForm = ({ onCalculate }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="form-title">Daily Activities</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+        <h2 className="form-title" style={{ margin: 0 }}>Daily Activities</h2>
+        <div style={{ position: 'relative', display: 'inline-flex' }}>
+          <button
+            type="button"
+            onClick={() => {
+              navigate('/documentation');
+              window.scrollTo(0, 0);
+            }}
+            aria-label="View Emission Factors & Documentation"
+            style={{
+              background: 'transparent',
+              border: '1px solid rgba(57, 255, 20, 0.25)',
+              color: 'var(--eco-main)',
+              borderRadius: '50%',
+              width: '32px',
+              height: '32px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              outline: 'none',
+              padding: 0,
+            }}
+            onMouseEnter={e => {
+              setShowTooltip(true);
+              e.currentTarget.style.background = 'rgba(57, 255, 20, 0.08)';
+              e.currentTarget.style.borderColor = 'rgba(57, 255, 20, 0.6)';
+              e.currentTarget.style.boxShadow = '0 0 10px rgba(57, 255, 20, 0.2)';
+            }}
+            onMouseLeave={e => {
+              setShowTooltip(false);
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.borderColor = 'rgba(57, 255, 20, 0.25)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
+            onFocus={() => setShowTooltip(true)}
+            onBlur={() => setShowTooltip(false)}
+          >
+            <Info size={16} />
+          </button>
+          
+          <AnimatePresence>
+            {showTooltip && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                transition={{ duration: 0.15 }}
+                style={{
+                  position: 'absolute',
+                  right: '0%',
+                  bottom: 'calc(100% + 8px)',
+                  background: 'rgba(20, 20, 20, 0.95)',
+                  backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(57, 255, 20, 0.3)',
+                  padding: '0.4rem 0.8rem',
+                  borderRadius: '0.5rem',
+                  fontSize: '0.75rem',
+                  color: '#ffffff',
+                  whiteSpace: 'nowrap',
+                  zIndex: 100,
+                  pointerEvents: 'none',
+                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(57, 255, 20, 0.1)',
+                  fontFamily: 'var(--font-accent)',
+                  fontWeight: 500,
+                }}
+              >
+                View Emission Factors &amp; Documentation
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
       
       <motion.form 
         onSubmit={handleSubmit}
