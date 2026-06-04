@@ -154,7 +154,7 @@
     align-items: center;
     justify-content: center;
     min-height: 60vh;
-    color: var(--eco-main);
+    color: #ffffff;
     font-family: var(--font-display);
     font-size: var(--fs-2xl);
 }
@@ -162,9 +162,9 @@
 .spinner {
     width: 50px;
     height: 50px;
-    border: 3px solid rgba(0, 119, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    border-top-color: var(--eco-main);
+    border-top-color: #ffffff;
     animation: spin 1s ease-in-out infinite;
     margin-bottom: 1rem;
 }

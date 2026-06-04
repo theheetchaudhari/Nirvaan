@@ -112,7 +112,7 @@ const WeatherPage = () => {
     return (
       <div className="weather-page container weather-loading">
         <div className="spinner"></div>
-        <p>Analyzing Environmental Data...</p>
+        <p>Loading...</p>
       </div>
     );
   }
