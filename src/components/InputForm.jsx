@@ -126,17 +126,19 @@ const InputForm = ({ onCalculate }) => {
     onCalculate(formData);
   };
 
+  // Emission constants: walk (0 kg/km), bike (0.11 kg/km), bus (0.06 kg/km), car (0.15 kg/km)
   const transportOptions = [
-    { value: 'walk', label: 'Walk/Cycle (0 kg/km)' },
-    { value: 'bike', label: 'Bike/Scooter (0.11 kg/km)' },
-    { value: 'bus', label: 'Bus/Metro (0.06 kg/km)' },
-    { value: 'car', label: 'Car (0.15 kg/km)' }
+    { value: 'walk', label: 'Walk/Cycle' },
+    { value: 'bike', label: 'Bike/Scooter' },
+    { value: 'bus', label: 'Bus/Metro' },
+    { value: 'car', label: 'Car' }
   ];
 
+  // Emission constants: veg (3.81 kg/day), mixed (5.63 kg/day), non-veg (7.19 kg/day)
   const dietOptions = [
-    { value: 'veg', label: 'Vegetarian (3.81 kg/day)' },
-    { value: 'mixed', label: 'Mixed Diet (5.63 kg/day)' },
-    { value: 'non-veg', label: 'Heavy Meat Diet (7.19 kg/day)' }
+    { value: 'veg', label: 'Vegetarian' },
+    { value: 'mixed', label: 'Mixed Diet' },
+    { value: 'non-veg', label: 'Heavy Meat Diet' }
   ];
 
   const containerVariants = {
