@@ -9,7 +9,6 @@ import CarbonPieChart from './components/CarbonPieChart';
 import TreeCard from './components/TreeCard';
 import TipsCard from './components/TipsCard';
 import Insights from './components/Insights';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Documentation from './pages/documentation/DocsPage.jsx';
 import WeatherPage from './pages/WeatherPage.jsx';
@@ -120,7 +119,6 @@ function App() {
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/weather" element={<WeatherPage />} />
         </Routes>
-        <Contact />
       </main>
       <Footer />
     </div>
