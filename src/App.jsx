@@ -14,6 +14,7 @@ import Documentation from './pages/documentation/DocsPage.jsx';
 import WeatherPage from './pages/WeatherPage.jsx';
 import PrivacyPage from './pages/PrivacyPage.jsx';
 import TermsPage from './pages/TermsPage.jsx';
+import CookiePolicy from './pages/CookiePolicy.jsx';
 import NeonLiquidBg from './components/NeonLiquidBg';
 import WeatherBg from './components/weather/WeatherBg';
 import { calculateFootprint } from './utils/carbonCalculator';
@@ -122,6 +123,7 @@ function App() {
           <Route path="/weather" element={<WeatherPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </main>
       <Footer />
