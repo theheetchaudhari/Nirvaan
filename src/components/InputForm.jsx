@@ -21,12 +21,12 @@ const CustomSelect = ({ options, value, onChange, name }) => {
 
   return (
     <div ref={dropdownRef} style={{ position: 'relative', width: '100%' }}>
-      <div 
-        className="form-control" 
-        style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
+      <div
+        className="form-control"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
           cursor: 'pointer',
           userSelect: 'none'
         }}
@@ -37,10 +37,10 @@ const CustomSelect = ({ options, value, onChange, name }) => {
           <ChevronDown size={16} color="var(--text-muted)" />
         </motion.div>
       </div>
-      
+
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -61,7 +61,7 @@ const CustomSelect = ({ options, value, onChange, name }) => {
             }}
           >
             {options.map((opt) => (
-              <div 
+              <div
                 key={opt.value}
                 style={{
                   padding: '0.75rem 1rem',
@@ -157,7 +157,7 @@ const InputForm = ({ onCalculate }) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="card"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -169,7 +169,7 @@ const InputForm = ({ onCalculate }) => {
           <button
             type="button"
             onClick={() => {
-              navigate('/documentation');
+              navigate('/emission-factors');
               window.scrollTo(0, 0);
             }}
             aria-label="View Emission Factors & Documentation"
@@ -205,7 +205,7 @@ const InputForm = ({ onCalculate }) => {
           >
             <Info size={16} />
           </button>
-          
+
           <AnimatePresence>
             {showTooltip && (
               <motion.div
@@ -238,8 +238,8 @@ const InputForm = ({ onCalculate }) => {
           </AnimatePresence>
         </div>
       </div>
-      
-      <motion.form 
+
+      <motion.form
         onSubmit={handleSubmit}
         onKeyDown={handleKeyDown}
         variants={containerVariants}
@@ -249,11 +249,11 @@ const InputForm = ({ onCalculate }) => {
         <motion.div variants={itemVariants} className="form-group">
           <label className="form-label"><Car size={16} color="#3b82f6" /> Transport</label>
           <div className="form-row">
-            <CustomSelect 
-              name="transportType" 
-              value={formData.transportType} 
-              onChange={handleChange} 
-              options={transportOptions} 
+            <CustomSelect
+              name="transportType"
+              value={formData.transportType}
+              onChange={handleChange}
+              options={transportOptions}
             />
             <input type="number" name="distance" placeholder="Distance (km)" value={formData.distance} onChange={handleChange} className="form-control" required min="0" step="any" />
           </div>
@@ -276,11 +276,11 @@ const InputForm = ({ onCalculate }) => {
 
         <motion.div variants={itemVariants} className="form-group">
           <label className="form-label"><Utensils size={16} color="#ef4444" /> Diet Type</label>
-          <CustomSelect 
-            name="foodType" 
-            value={formData.foodType} 
-            onChange={handleChange} 
-            options={dietOptions} 
+          <CustomSelect
+            name="foodType"
+            value={formData.foodType}
+            onChange={handleChange}
+            options={dietOptions}
           />
         </motion.div>
 

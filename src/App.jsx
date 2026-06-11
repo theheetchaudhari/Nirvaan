@@ -10,7 +10,7 @@ import TreeCard from './components/TreeCard';
 import TipsCard from './components/TipsCard';
 import Insights from './components/Insights';
 import Footer from './components/Footer';
-import Documentation from './pages/documentation/DocsPage.jsx';
+import EmissionFactorPage from './pages/EmissionFactorPage.jsx';
 import WeatherPage from './pages/WeatherPage.jsx';
 import PrivacyPage from './pages/PrivacyPage.jsx';
 import TermsPage from './pages/TermsPage.jsx';
@@ -120,7 +120,7 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/emission-factors" element={<EmissionFactorPage />} />
           <Route path="/weather" element={<WeatherPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />

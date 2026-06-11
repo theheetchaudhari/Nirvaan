@@ -1,0 +1,524 @@
+/* ================================================
+   NIRVAAN — EMISSION FACTOR PAGE (SIMPLE LIGHT THEME)
+   Modern layout, clean styling, Indigo/Teal/Blue palette (non-green)
+   Matches styling used in Disclaimer, Privacy, and Terms
+   ================================================ */
+
+.ef-page-simple {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 3rem 1rem 6rem;
+}
+
+.ef-simple-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ─── BACK BUTTON ─── */
+.ef-header-action {
+  margin-bottom: 1.5rem;
+}
+
+.ef-simple-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ef-simple-back:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+/* ─── GRID LAYOUT ─── */
+.ef-simple-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .ef-simple-grid-layout {
+    grid-template-columns: 2.2fr 1fr;
+  }
+}
+
+/* ─── MAIN CARD ─── */
+.ef-simple-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+.ef-simple-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ef-simple-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Accent Color - Purple/Indigo instead of green */
+.text-accent-color {
+  color: #4f46e5;
+}
+
+.ef-simple-meta {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Intro Text */
+.ef-simple-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 1rem;
+}
+
+.ef-simple-intro p:last-child {
+  margin-bottom: 1.5rem;
+}
+
+/* ─── FORMULA CARD ─── */
+.ef-formula-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.ef-formula-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.ef-formula-eq {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.ef-formula-vars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.ef-formula-vars strong {
+  color: #475569;
+}
+
+@media (min-width: 600px) {
+  .ef-formula-vars {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+/* ─── SECTIONS LIST ─── */
+.ef-simple-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.ef-simple-item {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.ef-simple-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Pastel theme colors */
+.box-blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.box-teal {
+  background-color: #f0fdfa;
+  color: #0d9488;
+}
+
+.box-purple {
+  background-color: #faf5ff;
+  color: #7c3aed;
+}
+
+.box-indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.box-royal {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+}
+
+.box-yellow {
+  background-color: #fefbeb;
+  color: #ca8a04;
+}
+
+.ef-simple-content h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.ef-p {
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 0.85rem;
+}
+.ef-p:last-child {
+  margin-bottom: 0;
+}
+
+.ef-strong {
+  font-weight: 600;
+  color: #334155;
+}
+
+.ef-subhead {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin: 1.25rem 0 0.5rem;
+}
+
+/* ─── TABLES ─── */
+.ef-table-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.ef-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.ef-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.ef-table td {
+  padding: 0.75rem 1rem;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ef-table td:first-child {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.ef-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ef-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* ─── ACCORDIONS ─── */
+.ef-accordions-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ef-acc {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.ef-acc:hover,
+.ef-acc--open {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.ef-acc-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+}
+
+.ef-acc-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ef-acc-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ef-acc-chevron {
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.ef-acc-chevron--open {
+  transform: rotate(180deg);
+  color: #4f46e5;
+}
+
+.ef-acc-body {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.ef-acc-content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* ─── CODE & BLOCKQUOTE ─── */
+.ef-code {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #6366f1;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #312e81;
+  margin: 0.5rem 0;
+  overflow-x: auto;
+}
+
+.ef-bq {
+  border-left: 3px solid #cbd5e1;
+  background-color: #f8fafc;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  color: #475569;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* ─── SOURCES ─── */
+.ef-source-block {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ef-source-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.ef-source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #4f46e5;
+  font-size: 0.8rem;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.ef-source-link:hover {
+  text-decoration: underline;
+}
+
+/* ─── FOOTER BANNER ─── */
+.ef-simple-footer-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.banner-icon {
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+}
+
+.ef-simple-footer-banner p {
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ─── SIDEBAR ─── */
+.ef-simple-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.ef-sidebar-sticky {
+  position: sticky;
+  top: 6rem;
+}
+
+.minimalist-badge-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.badge-illustration {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-shield {
+  z-index: 2;
+}
+
+.badge-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px dashed #e2e8f0;
+  border-radius: 50%;
+  animation: rotateRing 25s linear infinite;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.minimalist-badge-card h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.minimalist-badge-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .ef-page-simple {
+    padding: 1.5rem 0.5rem 4rem;
+  }
+
+  .ef-simple-card {
+    padding: 1.5rem;
+  }
+
+  .ef-simple-title {
+    font-size: 2rem;
+  }
+
+  .ef-simple-item {
+    gap: 0.85rem;
+  }
+
+  .ef-simple-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+}
