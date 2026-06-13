@@ -1,0 +1,340 @@
+/* ================================================
+   NIRVAAN — ABOUT NIRVAAN PAGE (SIMPLE LIGHT THEME)
+   Modern layout, clean styling, Blue/Green/Purple palette
+   ================================================ */
+
+.about-page-simple {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 3rem 1rem 6rem;
+}
+
+.about-simple-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ─── BACK BUTTON ─── */
+.about-header-action {
+  margin-bottom: 1.5rem;
+}
+
+.about-simple-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.about-simple-back:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+/* ─── GRID LAYOUT ─── */
+.about-simple-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .about-simple-grid-layout {
+    grid-template-columns: 2.2fr 1fr;
+  }
+}
+
+/* ─── MAIN CARD ─── */
+.about-simple-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+.about-simple-header {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-simple-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+/* Accent Color */
+.text-accent-color {
+  color: #10b981; /* Eco Emerald Green */
+}
+
+.about-simple-meta {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Intro Text */
+.about-simple-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 2rem;
+}
+
+/* ─── SECTIONS LIST ─── */
+.about-simple-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-simple-item {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.about-simple-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.box-blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.box-purple {
+  background-color: #faf5ff;
+  color: #7c3aed;
+}
+
+.box-indigo {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+.box-teal {
+  background-color: #ecfeff;
+  color: #0891b2;
+}
+
+.box-green {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+
+.box-violet {
+  background-color: #f5f3ff;
+  color: #8b5cf6;
+}
+
+.about-simple-content h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.about-simple-content p {
+  font-size: 0.975rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* Acronym Highlight Callout */
+.acronym-callout {
+  background-color: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 0.75rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-size: 1.05rem !important;
+  color: #065f46 !important;
+}
+
+/* Bullet list */
+.about-focus-list {
+  margin: 0.75rem 0 0.75rem 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-focus-list li {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+/* Mission & Vision sub-grid */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mission-box,
+.vision-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.sub-box-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  color: #0f172a !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ─── FOOTER BANNER ─── */
+.about-simple-footer-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f0fdf4;
+  border: 1px solid #d1fae5;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.banner-icon {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+}
+
+.about-simple-footer-banner p {
+  font-size: 0.95rem;
+  color: #065f46;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ─── SIDEBAR ─── */
+.about-simple-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-sidebar-sticky {
+  position: sticky;
+  top: 6rem;
+}
+
+.minimalist-badge-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.badge-illustration {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-shield {
+  z-index: 2;
+}
+
+.badge-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px dashed #cbd5e1;
+  border-radius: 50%;
+  animation: rotateRing 25s linear infinite;
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.minimalist-badge-card h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+}
+
+.minimalist-badge-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .about-page-simple {
+    padding: 1.5rem 0.5rem 4rem;
+  }
+
+  .about-simple-card {
+    padding: 1.5rem;
+  }
+
+  .about-simple-title {
+    font-size: 2rem;
+  }
+
+  .about-simple-item {
+    gap: 0.85rem;
+  }
+
+  .about-simple-icon-box {
+    width: 38px;
+    height: 38px;
+  }
+}
