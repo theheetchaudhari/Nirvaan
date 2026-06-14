@@ -18,6 +18,7 @@ import CookiePolicy from './pages/CookiePolicy.jsx';
 import DisclaimerPage from './pages/DisclaimerPage.jsx';
 import AccessibilityPage from './pages/AccessibilityPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
+import MethodologyPage from './pages/MethodologyPage.jsx';
 import NeonLiquidBg from './components/NeonLiquidBg';
 import WeatherBg from './components/weather/WeatherBg';
 import { calculateFootprint } from './utils/carbonCalculator';
@@ -130,6 +131,7 @@ function App() {
           <Route path="/disclaimer" element={<DisclaimerPage />} />
           <Route path="/accessibility" element={<AccessibilityPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/methodology" element={<MethodologyPage />} />
         </Routes>
       </main>
       <Footer />
