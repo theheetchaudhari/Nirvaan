@@ -20,6 +20,7 @@ import AccessibilityPage from './pages/AccessibilityPage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import MethodologyPage from './pages/MethodologyPage.jsx';
 import ResearchPage from './pages/ResearchPage.jsx';
+import RoadmapPage from './pages/RoadmapPage.jsx';
 import NeonLiquidBg from './components/NeonLiquidBg';
 import WeatherBg from './components/weather/WeatherBg';
 import { calculateFootprint } from './utils/carbonCalculator';
@@ -134,6 +135,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/methodology" element={<MethodologyPage />} />
           <Route path="/research" element={<ResearchPage />} />
+          <Route path="/roadmap" element={<RoadmapPage />} />
         </Routes>
       </main>
       <Footer />
